@@ -52,15 +52,18 @@
         }
         .glitch-title {
         position: relative;
-        color: #000901;
+        color: #000000;
         letter-spacing: 0.025em;
         text-shadow: 0 0 5px rgba(255, 191, 0, 0.5);
+        overflow: hidden; /* Adicione esta linha */
         }
 
         .glitch-title span {
         position: absolute;
         top: 0;
         left: 0;
+        right: 0; /* Adicione esta linha */
+        bottom: 0; /* Adicione esta linha */
         }
 
         .glitch-title span:first-child {
@@ -163,7 +166,7 @@
     <main class="pt-16">
         <section id="hero" class="gradient-bg text-black py-20 relative">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 glitch-title">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold mb-4 glitch-title">
                     <span aria-hidden="true">Brazilian Excellence in Global Communication</span>
                     Brazilian Excellence in Global Communication
                     <span aria-hidden="true">Brazilian Excellence in Global Communication</span>
