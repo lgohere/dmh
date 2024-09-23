@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,6 +6,7 @@
     <title>DMH Localization - Brazilian Excellence in Global Communication</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -31,8 +33,8 @@
         }
         #particles-js {
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             top: 0;
             left: 0;
             z-index: -1;
@@ -42,151 +44,147 @@
             position: relative;
             overflow: hidden;
         }
-        .tech-border::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, transparent, transparent, #FFBF00);
-            animation: rotate 4s linear infinite;
-        }
-        .tech-border::after {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            background: #111111;
-            border-radius: inherit;
-        }
+
         @keyframes rotate {
             100% {
                 transform: rotate(1turn);
             }
         }
-        .glitch {
-            position: relative;
-        }
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00c1;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        .glitch-title {
+        position: relative;
+        color: #000901;
+        letter-spacing: 0.025em;
+        text-shadow: 0 0 5px rgba(255, 191, 0, 0.5);
         }
 
+        .glitch-title span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+
+        .glitch-title span:first-child {
+        animation: glitch 650ms infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        transform: translate(-0.025em, -0.0125em);
+        opacity: 0.8;
+        }
+
+        .glitch-title span:last-child {
+        animation: glitch 375ms infinite;
+        clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+        transform: translate(0.025em, 0.0125em);
+        opacity: 0.8;
+        }
+
+        @keyframes glitch {
+        0% {
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        14% {
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        15% {
+            text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        49% {
+            text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        50% {
+            text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                        0.05em 0 0 rgba(0, 255, 0, 0.75),
+                        0 -0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        99% {
+            text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                        0.05em 0 0 rgba(0, 255, 0, 0.75),
+                        0 -0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        100% {
+            text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                        -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                        -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+        }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+        .glitch-title span:first-child,
+        .glitch-title span:last-child {
+            animation: none;
+            opacity: 0;
+        }
+        }
         .team-member-img {
             position: relative;
             overflow: hidden;
             border-radius: 50%;
             cursor: pointer;
         }
-
-            .team-member-img img {
-                transition: transform 0.3s ease;
-            }
-
-            .team-member-img:hover img {
-                transform: scale(1.1);
-            }
-
-            .instagram-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(255, 191, 0, 0.7);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .team-member-img:hover .instagram-overlay {
-                opacity: 1;
-            }
-
-            .instagram-icon {
-                color: #111111;
-                font-size: 2rem;
-                transform: scale(0);
-                transition: transform 0.3s ease;
-            }
-
-            .team-member-img:hover .instagram-icon {
-                transform: scale(1);
-            }   
-
-
-        @keyframes glitch-anim {
-            0% {
-                clip: rect(76px, 9999px, 31px, 0);
-            }
-            100% {
-                clip: rect(19px, 9999px, 75px, 0);
-            }
+        .team-member-img img {
+            transition: transform 0.3s ease;
         }
-        @keyframes glitch-anim2 {
-            0% {
-                clip: rect(21px, 9999px, 46px, 0);
-            }
-            100% {
-                clip: rect(39px, 9999px, 8px, 0);
-            }
+        .team-member-img:hover img {
+            transform: scale(1.1);
         }
+
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <div id="particles-js"></div>
     <header class="bg-black bg-opacity-80 shadow-md fixed w-full z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             <div class="text-2xl font-bold text-amber glitch" data-text="DMH Localization">DMH Localization</div>
-            <div>
+            <div class="hidden md:flex">
                 <a href="#about" class="text-white hover:text-amber px-3 py-2 transition duration-300">About</a>
                 <a href="#services" class="text-white hover:text-amber px-3 py-2 transition duration-300">Services</a>
                 <a href="#team" class="text-white hover:text-amber px-3 py-2 transition duration-300">Team</a>
                 <a href="#contact" class="text-white hover:text-amber px-3 py-2 transition duration-300">Contact</a>
             </div>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
+        <div class="hidden md:hidden bg-black bg-opacity-80" id="mobile-menu">
+            <a href="#about" class="block text-white hover:text-amber px-3 py-2 transition duration-300">About</a>
+            <a href="#services" class="block text-white hover:text-amber px-3 py-2 transition duration-300">Services</a>
+            <a href="#team" class="block text-white hover:text-amber px-3 py-2 transition duration-300">Team</a>
+            <a href="#contact" class="block text-white hover:text-amber px-3 py-2 transition duration-300">Contact</a>
+        </div>
     </header>
 
     <main class="pt-16">
         <section id="hero" class="gradient-bg text-black py-20 relative">
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-5xl font-bold mb-4 glitch" data-text="Brazilian Excellence in Global Communication">Brazilian Excellence in Global Communication</h1>
-                <p class="text-xl mb-8">Transforming content with cultural precision and linguistic mastery</p>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 glitch-title">
+                    <span aria-hidden="true">Brazilian Excellence in Global Communication</span>
+                    Brazilian Excellence in Global Communication
+                    <span aria-hidden="true">Brazilian Excellence in Global Communication</span>
+                  </h1>
+                <p class="text-lg sm:text-xl mb-8">Transforming content with cultural precision and linguistic mastery</p>
                 <a href="#contact" class="bg-black text-amber px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300">Get Started</a>
             </div>
         </section>
 
         <section id="stats" class="py-16 bg-black bg-opacity-80 relative">
-            <div class="container mx-auto px-6 text-center">
-                <div class="flex flex-wrap justify-around">
-                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="tech-border p-6 rounded-lg">
                         <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="59">59 mi</p>
                         <p class="text-white relative z-10">Views on Youtube</p>
                     </div>
-                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+                    <div class="tech-border p-6 rounded-lg">
                         <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="700">+700</p>
                         <p class="text-white relative z-10">Songs/Chapters Localized</p>
                     </div>
-                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+                    <div class="tech-border p-6 rounded-lg">
                         <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="100">100%</p>
                         <p class="text-white relative z-10">Client Satisfaction</p>
                     </div>
@@ -195,18 +193,18 @@
         </section>
 
         <section id="about" class="py-16 bg-gray-900 bg-opacity-80 relative">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8 text-amber glitch" data-text="The Triad of Excellence">The Triad of Excellence</h2>
-                <p class="text-lg text-white mb-6">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-amber glitch" data-text="The Triad of Excellence">The Triad of Excellence</h2>
+                <p class="text-base sm:text-lg text-white mb-6 max-w-3xl mx-auto">
                     We present an extraordinary team of professionals who redefine the standards of localization and dubbing for Brazilian Portuguese. With a unique combination of experience, creativity, and technical precision, we offer unparalleled solutions for companies seeking excellence in cultural and linguistic adaptation.
                 </p>
             </div>
         </section>
 
         <section id="services" class="py-16 bg-black bg-opacity-80 relative">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Our Services">Our Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Our Services">Our Services</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-md tech-border">
                         <h3 class="text-xl font-semibold mb-4 text-amber relative z-10">Precise Localization</h3>
                         <p class="text-white relative z-10">Culturally relevant adaptations that resonate with Brazilian audiences.</p>
@@ -224,21 +222,30 @@
         </section>
 
         <section id="team" class="py-16 bg-gray-900 bg-opacity-80 relative">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Meet Our Expert Team">Meet Our Expert Team</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Meet Our Expert Team">Meet Our Expert Team</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <img src="luiz.png" alt="Luiz Gouveia" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <div class="team-member-img mx-auto mb-4 tech-border" style="width: 150px; height: 150px;">
+                            <img src="luiz.png" alt="Luiz Gouveia" class="w-full h-full object-cover">
+                            <a href="https://www.instagram.com/_luizgouveia" target="_blank"></a>
+                        </div>
                         <h3 class="text-xl font-semibold text-amber">Luiz Gouveia</h3>
                         <p class="text-white">The Localization Expert</p>
                     </div>
                     <div class="text-center">
-                        <img src="adriano.png" alt="Adriano Daga" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <div class="team-member-img mx-auto mb-4 tech-border" style="width: 150px; height: 150px;">
+                            <img src="adriano.png" alt="Adriano Daga" class="w-full h-full object-cover">
+                            <a href="https://www.instagram.com/adriano_daga" target="_blank"></a>
+                        </div>
                         <h3 class="text-xl font-semibold text-amber">Adriano Daga</h3>
                         <p class="text-white">The Audio Virtuoso</p>
                     </div>
                     <div class="text-center">
-                        <img src="thainara.png" alt="Thainara Fonseca" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <div class="team-member-img mx-auto mb-4 tech-border" style="width: 150px; height: 150px;">
+                            <img src="thainara.png" alt="Thainara Fonseca" class="w-full h-full object-cover">
+                            <a href="https://www.instagram.com/thainara" target="_blank"></a>
+                        </div>
                         <h3 class="text-xl font-semibold text-amber">Thainara Fonseca</h3>
                         <p class="text-white">The Enchanting Voice</p>
                     </div>
@@ -247,17 +254,17 @@
         </section>
 
         <section id="cta" class="gradient-bg text-black py-20 relative">
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h2 class="text-3xl font-bold mb-4 glitch" data-text="Ready to Elevate Your Project?">Ready to Elevate Your Project?</h2>
-                <p class="text-xl mb-8">Discover the power of perfect localization with DMH Localization</p>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 glitch" data-text="Ready to Elevate Your Project?">Ready to Elevate Your Project?</h2>
+                <p class="text-lg sm:text-xl mb-8">Discover the power of perfect localization with DMH Localization</p>
                 <a href="#contact" class="bg-black text-amber px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300">Contact Us Now</a>
             </div>
         </section>
 
         <section id="contact" class="py-16 bg-black bg-opacity-80 relative">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8 text-amber glitch" data-text="Get in Touch">Get in Touch</h2>
-                <form id="whatsappForm" class="max-w-lg mx-auto">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-amber glitch" data-text="Get in Touch">Get in Touch</h2>
+                <form id="whatsappForm" class="max-w-md mx-auto">
                     <div class="mb-4">
                         <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-2 bg-gray-900 text-white border border-amber rounded-md focus:outline-none focus:ring-2 focus:ring-amber transition duration-300" required>
                     </div>
@@ -274,7 +281,7 @@
     </main>
 
     <footer class="bg-black bg-opacity-80 text-white py-8 relative">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2024 DMH Localization. All rights reserved.</p>
         </div>
     </footer>
@@ -323,18 +330,34 @@
         });
 
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var message = document.getElementById('message').value;
-        
-        var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-        var whatsappNumber = '5513981942956';
-        var whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
-        
-        window.open(whatsappLink, '_blank');
-    });
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+            var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            var whatsappNumber = '5513981942956';
+            var whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+            
+            window.open(whatsappLink, '_blank');
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
