@@ -1,0 +1,340 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMH Localization - Brazilian Excellence in Global Communication</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #111111;
+            color: #ffffff;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFBF00, #DAA520);
+        }
+        .text-amber {
+            color: #FFBF00;
+        }
+        .bg-amber {
+            background-color: #FFBF00;
+        }
+        .border-amber {
+            border-color: #FFBF00;
+        }
+        .hover\:bg-amber-dark:hover {
+            background-color: #DAA520;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .tech-border {
+            border: 2px solid #FFBF00;
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, #FFBF00);
+            animation: rotate 4s linear infinite;
+        }
+        .tech-border::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: #111111;
+            border-radius: inherit;
+        }
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        .team-member-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+            .team-member-img img {
+                transition: transform 0.3s ease;
+            }
+
+            .team-member-img:hover img {
+                transform: scale(1.1);
+            }
+
+            .instagram-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 191, 0, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .team-member-img:hover .instagram-overlay {
+                opacity: 1;
+            }
+
+            .instagram-icon {
+                color: #111111;
+                font-size: 2rem;
+                transform: scale(0);
+                transition: transform 0.3s ease;
+            }
+
+            .team-member-img:hover .instagram-icon {
+                transform: scale(1);
+            }   
+
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(76px, 9999px, 31px, 0);
+            }
+            100% {
+                clip: rect(19px, 9999px, 75px, 0);
+            }
+        }
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(21px, 9999px, 46px, 0);
+            }
+            100% {
+                clip: rect(39px, 9999px, 8px, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header class="bg-black bg-opacity-80 shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-amber glitch" data-text="DMH Localization">DMH Localization</div>
+            <div>
+                <a href="#about" class="text-white hover:text-amber px-3 py-2 transition duration-300">About</a>
+                <a href="#services" class="text-white hover:text-amber px-3 py-2 transition duration-300">Services</a>
+                <a href="#team" class="text-white hover:text-amber px-3 py-2 transition duration-300">Team</a>
+                <a href="#contact" class="bg-amber text-black px-4 py-2 rounded-full hover:bg-amber-dark transition duration-300">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="hero" class="gradient-bg text-black py-20 relative">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-5xl font-bold mb-4 glitch" data-text="Brazilian Excellence in Global Communication">Brazilian Excellence in Global Communication</h1>
+                <p class="text-xl mb-8">Transforming content with cultural precision and linguistic mastery</p>
+                <a href="#contact" class="bg-black text-amber px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300">Get Started</a>
+            </div>
+        </section>
+
+        <section id="stats" class="py-16 bg-black bg-opacity-80 relative">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex flex-wrap justify-around">
+                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+                        <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="59">59 mi</p>
+                        <p class="text-white relative z-10">Views on Youtube</p>
+                    </div>
+                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+                        <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="700">+700</p>
+                        <p class="text-white relative z-10">Songs/Chapters Localized</p>
+                    </div>
+                    <div class="tech-border p-6 rounded-lg m-4 w-64">
+                        <p class="text-4xl font-bold text-amber relative z-10 counter" data-target="100">100%</p>
+                        <p class="text-white relative z-10">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-gray-900 bg-opacity-80 relative">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8 text-amber glitch" data-text="The Triad of Excellence">The Triad of Excellence</h2>
+                <p class="text-lg text-white mb-6">
+                    We present an extraordinary team of professionals who redefine the standards of localization and dubbing for Brazilian Portuguese. With a unique combination of experience, creativity, and technical precision, we offer unparalleled solutions for companies seeking excellence in cultural and linguistic adaptation.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 bg-black bg-opacity-80 relative">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Our Services">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-md tech-border">
+                        <h3 class="text-xl font-semibold mb-4 text-amber relative z-10">Precise Localization</h3>
+                        <p class="text-white relative z-10">Culturally relevant adaptations that resonate with Brazilian audiences.</p>
+                    </div>
+                    <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-md tech-border">
+                        <h3 class="text-xl font-semibold mb-4 text-amber relative z-10">World-Class Audio Production</h3>
+                        <p class="text-white relative z-10">Grammy-winning quality in every project we undertake.</p>
+                    </div>
+                    <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow-md tech-border">
+                        <h3 class="text-xl font-semibold mb-4 text-amber relative z-10">Versatile Vocal Talent</h3>
+                        <p class="text-white relative z-10">Bringing characters and content to life with authentic emotion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-16 bg-gray-900 bg-opacity-80 relative">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-amber glitch" data-text="Meet Our Expert Team">Meet Our Expert Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <img src="luiz.png" alt="Luiz Gouveia" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <h3 class="text-xl font-semibold text-amber">Luiz Gouveia</h3>
+                        <p class="text-white">The Localization Expert</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="adriano.png" alt="Adriano Daga" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <h3 class="text-xl font-semibold text-amber">Adriano Daga</h3>
+                        <p class="text-white">The Audio Virtuoso</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="thainara.png" alt="Thainara Fonseca" class="rounded-full mx-auto mb-4 tech-border" style="max-width: 70%;">
+                        <h3 class="text-xl font-semibold text-amber">Thainara Fonseca</h3>
+                        <p class="text-white">The Enchanting Voice</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="gradient-bg text-black py-20 relative">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-3xl font-bold mb-4 glitch" data-text="Ready to Elevate Your Project?">Ready to Elevate Your Project?</h2>
+                <p class="text-xl mb-8">Discover the power of perfect localization with DMH Localization</p>
+                <a href="#contact" class="bg-black text-amber px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300">Contact Us Now</a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-black bg-opacity-80 relative">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8 text-amber glitch" data-text="Get in Touch">Get in Touch</h2>
+                <form id="whatsappForm" class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-2 bg-gray-900 text-white border border-amber rounded-md focus:outline-none focus:ring-2 focus:ring-amber transition duration-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" placeholder="Your Email" class="w-full px-4 py-2 bg-gray-900 text-white border border-amber rounded-md focus:outline-none focus:ring-2 focus:ring-amber transition duration-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <textarea id="message" placeholder="Your Message" rows="4" class="w-full px-4 py-2 bg-gray-900 text-white border border-amber rounded-md focus:outline-none focus:ring-2 focus:ring-amber transition duration-300" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-amber text-black py-2 rounded-md hover:bg-amber-dark transition duration-300">Send Message via WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black bg-opacity-80 text-white py-8 relative">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 DMH Localization. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#FFBF00" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#FFBF00", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                if (elementTop < window.innerHeight && elementBottom > 0) {
+                    element.classList.add('appear');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        gsap.from(".tech-border", {
+            duration: 1,
+            scale: 0.8,
+            opacity: 0,
+            delay: 0.5,
+            stagger: 0.2,
+            ease: "elastic",
+            force3D: true
+        });
+
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        
+        var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        var whatsappNumber = '5513981942956';
+        var whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+        
+        window.open(whatsappLink, '_blank');
+    });
+    </script>
+</body>
+</html>
